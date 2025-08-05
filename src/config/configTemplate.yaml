@@ -1,0 +1,14 @@
+# Meditation App YAML Configuration Template
+# Reference only. Not loaded at runtime. Example of app config structure.
+# All configuration is persisted in SQLite (Settings table), AsyncStorage, and SecureStore as per system architecture.
+
+theme: "default"                # color/theme name or palette id
+adsFreePurchased: false         # whether ads have been permanently removed by user
+dndEnabled: false               # enable Do Not Disturb during sessions
+backupEnabled: false            # enable scheduled background backup
+keepScreenOn: false             # keep device screen on during session
+countUp: false                  # display timers as count-up (vs. count-down)
+sessionBackgroundImage: ""      # URI or built-in image ref for session background
+backupFolder: "backups/"        # backup working directory (internal use)
+sqliteDbFile: "SQLite/app.db"   # path to SQLite DB file
+locale: "system"                # device locale for date/time formatting

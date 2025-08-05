@@ -1,0 +1,52 @@
+// // app/_layout.tsx
+
+// import React, { useEffect, useState } from 'react';
+// import { PaperProvider } from 'react-native-paper';
+// // import { ThemeProvider } from '@react-navigation/native'; // Not needed with Expo Router
+
+
+// import { SettingsStore } from '../src/store/SettingsStore';
+// import { useSessionTimersStore } from '../src/store/TimerStateStore';
+// import { useLogStore } from '../src/store/LogStateStore';
+// import { useDiaryStore } from '../src/store/DiaryStore';
+// import { NotificationManager } from '../src/services/NotificationManager';
+// import { BackupJobHandler } from '../src/services/BackupJobHandler';
+// import { AppBootManager, setAppBootManagerSnackbar } from '../src/bootstrap/AppBootManager';
+
+// // Add other providers if needed
+
+// export default function RootLayout() {
+//     const [snackbarMsg, setSnackbarMsg] = useState<string | null>(null);
+//     useEffect(() => {
+//         // This "initializes" Zustand store slices
+//         void SettingsStore.getState;
+//         void useSessionTimersStore.getState;
+//         void useLogStore.getState;
+//         void useDiaryStore.getState;
+
+//         // Singleton service class boot (if needed)
+//         void NotificationManager;
+//         void BackupJobHandler;
+
+//         // === APP BOOT MANAGER LOGIC ===
+//         setAppBootManagerSnackbar((msg) => setSnackbarMsg(msg));
+//         const bootManager = new AppBootManager();
+
+//         // Run initial app-boot hydration logic (async)
+//         bootManager.hydrateSettingsStore();
+//         bootManager.checkAndRestoreSessionState();
+//         bootManager.registerLifecycleListeners();
+
+//         // (Optional) cleanup function for unmount, if you hot-reload a lot:
+//         return () => {
+//             bootManager.unregisterLifecycleListeners();
+//         };
+//     }, []);
+
+//     return (
+//         <PaperProvider>
+//             <Stack />
+//             {/* If you want to add more global providers (ThemeProvider, etc), nest them here */}
+//         </PaperProvider>
+//     );
+// }
